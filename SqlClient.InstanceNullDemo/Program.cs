@@ -41,7 +41,7 @@ internal class Program
                     {
                         var type = assembly.GetType(new AssemblyName(asm.Name).Name + ".SqlClientFactory");
                         var ci = type.GetProperties(BindingFlags.Static | BindingFlags.Public);
-                        if (ci.Length > 0) Console.WriteLine("Instance property not found!");
+                        if (ci.Length == 0) Console.WriteLine("Instance property not found!");
                     }
                     break;
                 }
